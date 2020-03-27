@@ -1,0 +1,249 @@
+% 		INSTRUCTIVO PARA CONSTRUIR EL ENSAYO EN LATEX
+%					v.1.3
+%				elaborado por @rmuriel
+%		---------------------------------------------------
+		
+% Este instructivo se crea para facilitar la comprensión sobre la estructura de un trabajo escrito en LaTeX, y de paso para que se comprenda una forma (entre las miles que existen) en que se podría construir un «ensayo de ficción».
+
+% Antes de empezar, para algunos será útil que lo diga, se observará que el documento está dividido en títulos en mayúscula y comentarios en color azul (como este). Corresponden a las partes habituales de un documento LaTeX y mis explicaciones. La parte que van a modificar se llama «CUERPO DEL DOCUMENTO». No tienen que saber código LaTeX para hacer este trabajo, sólo se dejan guiar por esta plantilla y listo. Más allá de leer juiciosamente este instructivo, no necesitan más!! :)
+
+% Lo que esté en latín y en color negro es lo que ustedes van a modificar. Verán que es muy fácil... abran la mente y déjense guiar! :)
+
+% Comencemos!! 
+
+%================================================================»
+% 0 - RAZONES POR LAS QUE HACEMOS ESTE TRABAJO EN LATEX
+%================================================================»
+
+% 1. LaTeX es el lenguaje del mundo académico. Las mejores universidades del mundo funcionan así, en todas existe al menos una cátedra permanente de LaTeX. En Colombia, lastimosamente, sólo lo usa la Universidad Nacional, la Universidad de Antioquia y la Universidad de los Andes. Cada una de estas universidades tiene formatos (plantillas LaTeX) para trabajos de semestre, tesis, informes de laboratorio, ensayos y exámenes parciales. 
+
+% 2. En dos aspectos importantes es el procesador de texto más efectivo que existe: rendimiento de la máquina (no hace que se cuelgue) y acabado editorial del documento (La forma final del documento es profesional y responde a los cánones editoriales internacionales).
+
+% 3. Es software libre y multiplataforma. Se puede trabajar desde casi cualquier sistema operativo respetable. No necesita ser pirateado y está disponible para su descarga las 24 horas del día. Sin contar con que existe https://www.writelatex.com, que hace el trabajo mucho más cómodo de manera online. 
+
+% 4. Automatiza procedimientos mecánicos típicos en la construcción de documentos:  autonumeración de fórmulas, generación de listas, creación de índices de contenido, de tablas, figuras y terminológicos, etc. 
+
+% 5. La preocupación por la forma se la deja uno al computador. Uno no tiene que pensar en las márgenes, en las negritas de los títulos, en el tipo de letra, etc... De esas formalidades se encarga LaTeX... Uno sólo se concentra en producir contenido, que es para eso que se inventaron los procesadores de texto en una computadora. Preocuparse por la forma es como si no se hubiera superado la época de la máquina de escribir. 
+
+% 6. Permite el uso de bases de datos bibliográficas con BibTeX. Se ahorra tiempo a la hora de citar textos y hacer listados de publicaciones. Basta con hacer una vez la base bibliográfica y uno sólo debe «llamar» las referencias usadas para cualquier cantidad de textos que uno escriba. En esto LaTeX está conectado con Mendeley, la base de datos bibliográfica más importante de la actualidad en el mundo académico. 
+
+% y como si esto fuera poco...
+
+% 7. Con LaTeX se permiten hacer comentarios en cualquier sección del texto sin que aparezcan en el documento final. Basta con introducir un signo de porcentaje (%) antes de empezar a escribirlos. 
+
+% De modo que... empecemos desde ya a usar LaTeX!!!!
+
+%================================================================»
+% I - PREÁMBULO
+%================================================================»
+
+% Antes de escribir el texto como tal, para LaTeX es importante clarificar algunos aspectos básicos sobre la naturaleza del documento que se va a escribir. Esta primera parte se llama «PREÁMBULO» y es el lugar donde se clarifican los siguientes aspectos:
+
+% - Tamaño de hoja y de fuente
+% - Tipo de documento: libro, artículo, informe, etc.
+% - Paquetes de información: español, márgenes, copiado pdf, colores, gráficos, etc. 
+% - Autor, título y fecha
+% - Algunos ajustes a la estética del documento general
+
+%----------------------------------------------------------------»
+% a - Definición de la Clase del Documento 
+%----------------------------------------------------------------»
+
+\documentclass[11pt,letterpaper]{article}
+
+%----------------------------------------------------------------»
+% b - Paquetes para trabajar en español 
+%----------------------------------------------------------------»
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{babelbib}
+\usepackage{url}
+
+%----------------------------------------------------------------»
+% c - Paquetes para solucionar el copiado del pdf
+%----------------------------------------------------------------»
+
+\usepackage{times}		
+\usepackage[T1]{fontenc}	
+
+%----------------------------------------------------------------»
+% d - Paquetes especiales (Según las necesidades del documento)
+%----------------------------------------------------------------»
+
+\usepackage[colorinlistoftodos]{todonotes} %Para insertar notas al lado
+\usepackage{graphicx} %Para usar imágenes
+\usepackage{tikz} %Para construir gráficos con código
+\usepackage{epigraph} %Hacer epígrafes
+\usepackage{multicol} %Construir múltiples columnas en el documento
+\usepackage{color} %Para darle color a la fuentes
+\usepackage{soul} %Para tachar palabras
+\usepackage{ulem} %Para subrayados y tachados especiales (\uuline, \uwave, \xout) Aunque casi nunca se usan, a veces pueden introducirse para remarcar algo. 
+
+%----------------------------------------------------------------»
+% e - Paquete para generar links (Si el doc. tiene hipervínculos)
+%----------------------------------------------------------------»
+
+\usepackage[backref]{hyperref}	% Soporte para generación de Links - Ojalá siempre el último paquete nombrado
+\hypersetup{pdfborder={0 0 0}}	% Quitarle los bordes a los links
+
+%----------------------------------------------------------------»
+% f - Arreglos sobre la estética de los párrafos (Opcional)
+%----------------------------------------------------------------»
+
+\setlength\parindent{0pt}	% Si se quiere suprimir la sangría de los párrafos
+\setlength{\parskip}{2mm}	% Si se quiere espaciar todos los párrafos
+
+%----------------------------------------------------------------»
+% g - Autor, título y fecha del Documento
+%----------------------------------------------------------------»
+
+\author{DIEGO FERNANDO DÍAZ TORRES\thanks{INGENIERIA ELECTRONICA, UNIVERSIDAD DE ANTIOQUIA, 2020}}
+\title{INICIO DE LA COMPUTACÍON MODERNA.}
+\date{\today} 
+
+%================================================================»
+% II - CUERPO DEL DOCUMENTO
+%================================================================»
+
+% Después de todo el preámbulo nos adentramos en la escritura del trabajo. El CUERPO DEL DOCUMENTO en LaTeX siempre inicia con las siguientes dos instrucciones:
+
+\begin{document}
+\maketitle
+
+% En el CUERPO DEL DOCUMENTO es donde vamos a encontrar:
+
+% - Abstract
+% - Secciones y subsecciones
+% - Tabla de contenido
+% - Tablas
+% - Gráficos
+% - Notas al pie y al márgen
+% - Párrafos especiales (cita)
+% - Bibliografía
+
+%----------------------------------------------------------------»
+% a - Creación del resumen (Abstract)
+%----------------------------------------------------------------»
+
+% El abstract es el resumen del ensayo. Se expone, entre cuatro y siete líneas, la naturaleza del escrito, su tema, el tipo de indagación y los intereses del texto. 
+
+\begin{abstract}
+En la segunda mitad del siglo XIX, Georg Cantor se preguntó sobre la paradoja del infinito, donde podían existir infinitos de distintos tamaños. Desde ese momento las matemáticas empezaron a tambalearse. Dado esto, en el siglo XX se dio “la crisis de los fundamentos”, que llevo a una conclusión: las matemáticas no eran infalibles.  
+\end{abstract}
+
+%----------------------------------------------------------------»
+% b - Escribir el Epígrafe (Opcional)
+%----------------------------------------------------------------»
+
+% Uno puede escribir o no un epígrafe al principio de un ensayo. Ustedes quizá lo han visto con frecuencia en diferentes tipos de escritos (ensayos, novelas, etc.) - Lo importante es que el epígrafe aluda a algo importante que usted quiere comunicar en el ensayo. 
+
+
+%----------------------------------------------------------------»
+% c - Inicio de las secciones del documento
+%----------------------------------------------------------------»
+
+\section*{Introducción} % La instrucción  \section con el signo * hace que no quede numerado.
+
+
+% En la «Introducción» se escribe una preparación a la discertación. La idea es atrapar al lector con sus propios intereses. Hacerle caer en cuenta que a él le gustaría leer sobre lo que usted le va a contar, especialmente le gustaría saber las razones por las cuales él debería ser un inventor como usted!!
+
+Desde hace solo unos siglos, los humanos podemos hacer uso de uno de los elementos mas importantes en la actualidad, hemos presenciado el nacimiento de la computación moderna. Esto se dio gracias al resultado de la competencia entre personajes, empresas, e incluso guerras. La primera parte de esta se dio gracias a la curiosidad de grandes mentes Kurt Gödel y Alan Turing quien con la maquina universal de Turing ha devenido la fundación de la teoría moderna de computación.\\
+ Cuando ciertos investigadores, fueron capaces de crear algo, que hasta el momento se creía imposible, y todo esto mientras se trataba de inventar la bomba atómica, o los estadounidenses intentaban descifrar las comunicaciones de los alemanes.
+
+\section*{Antecedentes}
+Desde hace muchos años, han surgido teorías revolucionarias, en la antigua Grecia, todo se explicaba mediante la influencia de los dioses. Pero hubo unos hombres, llamados los pitagóricos, quienes descubrieron como los números permiten definir leyes, como la armonía musical. De allí se dio la hipótesis de que el universo se podía explicar con los números naturales y racionales, pero esta no duro mucho, los conocedores del teorema de Pitágoras determinaron que la longitud de un cuadrado de unidad por unidad es raíz de 2. Pero ¿Este número se puede determinar como un numero finito de partes? De esto surgió la idea de la existencia de los números irracionales. Luego, en 1874 apareció Georg Cantor, quien se empezó a preguntar sobre los conjuntos, años después se encontraron casos paradójicos, donde había conjuntos que tenían como propio elemento el mismo conjunto, de allí nació la crisis de los fundamentos, que dio nacimiento a la computación moderna. 
+% ----------------------
+% La intrucción \underline se usa para subrayar frases. 
+% ----------------------
+
+\section{La teoria de los conjuntos}
+
+% Aquí se empieza con los argumentos. El título de cada uno de ellos puede modificarse y ser más acorde con el tipo de argumento que va a ofrecer. Recuerde que se trata de RAZONES y no de OPINIONES. 
+El infinito y los conjuntos infinitos han generado grandes debates entre los matemáticos. \cite{perez:Online}“Se entiende por conjunto infinito aquel conjunto en el que el número de sus elementos es incontable. Es decir, sin importar lo grande que pueda ser el número de sus elementos, siempre es posible encontrar más.”. Supongamos que tenemos el conjunto de los números enteros y números primos, ambos son infinitos, Cantor en 1874 empezó a investigar y realizar estudios sobre ello, donde con demostraciones complicadas genera la siguiente paradoja: Los números racionales, pares, impares y naturales son igual de infinitos. Al tamaño de estos Cantor los llamó Aleph-Cero.
+Después de esta observación Cantor siguió investigando sobre los conjuntos infinitos, pero ¿Hay conjuntos infinitos mas grandes que otros? En ese momento Cantor empezó a investigar los conjuntos que poseen a los números racionales y enteros, y aparte de ello a los que su estructura decimal no tiene ninguna patrón como lo son las raíces, el numero pi, entre otros. Este conjunto llamo los números reales, no los pudo contar, llegando a la conclusión que tiene un infinito mas grande que los números reales. Esta idea propuesta por Cantor fue una de las revolucionarias en la historia de las matemáticas.
+
+
+% ----------------------
+% Se van a dar cuenta de que el subrayado con \underline no funciona si lo que quieren es subrayar un párrafo completo, esta instrucción se usa sólo en palabras o frases cortas. 
+% ----------------------
+
+% ----------------------
+% La instrucción \footnote{} es para hacer pies de página. Como se ve en el resultado en PDF, generan un numerito consecutivo, a la manera habitual de los pies de página de los artículos o libros de ciencia. 
+% ----------------------
+
+\section{Crisis de los fundamentos}
+
+Años después Bertrand Russell encontró casos paradójicos como conjuntos compuestos por otros conjuntos, o conjuntos a los que el propio elemento era el mismo, estas eran situaciones contradictorias. En ese momento aparecieron dos facciones, los intuicionistas quienes proponían desechar toda la teoría de los conjuntos, y por otro lado los formalistas capitaneados por David Hilbert quien proponía arreglar uno problemas y todo volvería a ser lo mismo de siempre, esto lo pensaba hacer mediante el programa formalista,\cite{profor} “Hilbert exigía en su programa metamatemático … una teoría que fuese formalizada, consistente y completa”. Para que fueran consistentes esta no podía ser verdadera y falsa al mismo, por otra parte, para ser completa, se debe poder demostrar que cualquier afirmación matemática es alcanzable o no y finalmente se tendría que probar que la afirmación matemática es legal en una cantidad finita de pasos. Esta ultima fue muy importante, pues los intuicionistas se decidieron unir a programa, pues este parecía que iba a ser un éxito. 
+
+\section{El teorema de Gödel}
+Cuando todo iba saliendo bien, apareció Kurt Gödel y con su teorema de la incertidumbre demostró que con procesos finitos ningún sistema podría ser consistente y completo a la vez. Este teorema \cite{izquierdo2003argumento} ”tiene profundas repercusiones en la matematica y la lógica, y en partículas en la teoría de la demostración. Este teorema implica la imposibilidad de pruebas internas de consistencia para una teoría formalizada capaz de soportar la aritmética, con lo cual, es imposible en este tipo de marco, probar la consistencia de gran parte de la matematica.”
+\\
+\\
+La actual computación esta hecha en base a los teoremas de Gödel. En 1936 Alan Turing presentaron la formalización de un algoritmo, con limites en el proceso y la computación. Esto es llamado actualmente como Church-Turing, donde se afirma que cualquier proceso matemático posible se puede hacer por medio de algoritmos que sean ejecutados en una computadora.
+
+\section*{Conclusiones}
+Como pudimos leer las bases matemáticas en las que están basadas las ciencias de computación actual empezaron desde el momento en que Georg Cantor demostró que hay conjuntos infinitos de distintos tamaños. Esto sería muy difícil de entender en esa época, e incluso para algunas personas en la actualidad. Pero la curiosidad de las personas no permitió que se quedaran solo con esa teoría, pues investigaron aún más llegando a la paradoja de Russell que contradecía a la teoría de los conjuntos. Y a partir de ello fue que comenzó la crisis de los fundamentos, y como conclusión de esta podemos decir que permitió que conociéramos mejor la esencia de las matemáticas, y por la misma razón permitió el nacimiento de la computación moderna.
+% Este apartado se construye en dos columnas. Eso es gracias al paquete «multicol» que escribimos en el «preámbulo». Determinamos la cantidad de columnas dentro del segundo corchete del ambiente «multicols», tal y como sigue:
+
+
+
+
+
+
+%----------------------------------------------------------------»
+% c - Bibliografía
+%----------------------------------------------------------------»
+
+% El entorno «thebibliography» nos sirve para construir la bibliografía. Cada \bibtem es una referencia que hemos usado en nuestro documento. 
+
+% Para citar las referencias usamos el comando \cite{etiqueta}, tal y como se hizo en el último párrafo de esta plantilla.  Por supuesto, la «etiqueta» es el nombre que le hemos dado a la referencia. En el caso del primer libro de esta bibliografía vemos que la etiqueta es «ejemplo», las otras son «libro1», «libro2», etc. Usted puede usar cualquier etiqueta siempre y cuando no se repita en otra referencia. Cada referencia tiene etiqueta única.
+\bibliographystyle{babplai3}
+\bibliography{ref}
+
+
+%================================================================»
+% EXPLICACIONES FINALES
+%================================================================»
+%----------------------------------------------------------------»
+% Signos en LaTeX
+%----------------------------------------------------------------»
+
+% Como se ha notado, escribir el signo % (porcentaje) produce «comentarios» dentro del código, explicaciones que no son tomadas en cuenta a la hora de «compilar» el código escrito. Si se quiere incorporar un signo % (porcentaje) como parte del texto que se está escribiendo debe escribirse con la barra de instrucción habitual, así: \% 
+
+% Hay otros signos a los que también es necesario antecederlos de la barra \ - Son los siguientes:
+
+% \		carácter inicial de comando			Se escribiría: \tt\char‘\\
+% { }	abre y cierra bloque de código		Se escribiría: \{, \}
+% $		abre y cierra el modo matemático		Se escribiría: \$
+% &		tabulador (en tablas y matrices)		Se escribiría: \&
+% #		señala parámetro en las macros		Se escribiría: \_ , \^{}
+% _, ^	para subíndices y exponentes			Se escribiría: \#
+% ~		para evitar cortes de renglón			Se escribiría: \~{}
+
+%----------------------------------------------------------------»
+% Cambios en la estética de las palabras
+%----------------------------------------------------------------»
+
+% Este es el listado de las instrucciones básicas:
+
+% - Negrita: 	\textbf{}
+% - Itálica: 	\textit{}
+% - Slanted:		\textsl{}
+% - Sans Serif:	\textsf{}
+% - Versalitas:	\textsc{}
+% - Typewriter: 	\texttt{}
+% - Enfático:	\emph{}
+
+% Lo que se escriba dentro de los corchetes de cada instrucción será lo que se verá modificado en el texto. Ejemplo:
+
+% \sc{Esto es una frase en versalitas}
+
+% Por supuesto, la anterior instrucción no compilará en este documento porque la antece un signo de % (porcentaje), que es el signo de los «comentarios». Pero, pruebe en el texto normal y verá los cambios con cada una de las anteriores instrucciones. 
+
+%--------------------------------»»
+% NOTA IMPORTANTE
+% Si alguien quiere anexar tablas o gráficos al documento, le recomiendo acercarse a la sección que lo explica en los manuales, guías o instructivos que están en BlackBoard. 
+%--------------------------------»»
+
+\end{document}
